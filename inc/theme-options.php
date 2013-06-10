@@ -194,7 +194,7 @@ function retmin_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options', 'retmin' ), get_current_theme() ); ?></h2>
+		<h2><?php printf( __( '%s Theme Options', 'retmin' ), wp_get_theme('return-of-minimalistic-me') ); ?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
@@ -218,7 +218,7 @@ function retmin_theme_options_render_page() {
  */
 function retmin_theme_options_validate( $input ) {
 	$output = $defaults = retmin_get_default_theme_options();
-        
+
         $output['about_me'] = $input['about_me'];
 
 	return apply_filters( 'retmin_theme_options_validate', $output, $input, $defaults );
